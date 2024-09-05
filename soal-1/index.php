@@ -12,7 +12,14 @@
         <button type="reset">Reset</button>
     </form>
     <?php
-        // tambahkan perhitungan volume tabung di sini
-    ?>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $jarijari = $_POST["jarijari"]; // radius
+    $tinggi = $_POST["tinggi"]; // height
+
+    $volume = 3.14 * pow($jarijari, 2) * $tinggi; // calculate volume
+
+    echo "Volume of the cylinder: " . number_format($volume, 2) . " cubic units";
+}
+?>
 </body>
 </html>
